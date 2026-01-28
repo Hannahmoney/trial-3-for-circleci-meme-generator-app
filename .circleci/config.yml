@@ -93,3 +93,4 @@ workflows:
       - Read text file job:
           requires:
             - Create text file
+      - print-pipeline-id
