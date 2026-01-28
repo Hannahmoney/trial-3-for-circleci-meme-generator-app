@@ -5,14 +5,14 @@ commands:
   say-hello-command:
     description: "A command that says hello"
     parameters:
-      name:
+      id:
         type: string
         default: "World"
     steps:
       - run:
           name: "Say Hello"
           command: |
-            echo "Hello, << parameters.name >>!"
+            echo "Hello, << parameters.id >>!"
 
 
   print-pipeline-id:    
