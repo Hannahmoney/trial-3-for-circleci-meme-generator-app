@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: |
+          command: 
             echo $NEW_ENV_VAR
 
 workflows:
