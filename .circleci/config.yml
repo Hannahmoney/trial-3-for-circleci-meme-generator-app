@@ -25,9 +25,41 @@ jobs:
           command: 
             echo $NEW_ENV_VAR
 
+  Create text file:
+    docker:
+      - image: cimg/base:current
+
+    steps:
+      - checkout
+      - run:
+          name: "Create a text file"
+          command: |
+            echo "This is a sample text file." > sample.txt
+      - persist_to_workspace:
+          root: .
+          paths:
+            - sample.txt
+
+  Read text file:
+    docker:
+      - image: cimg/base:current
+
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: "Read the text file"
+          command: |
+            cat sample.txt
+
 workflows:
   do not say-hello-workflow: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - Do not say-hello
       - Environment Variables
+      - Create text file
+      - Read text file:
+          requires:
+            - Create text file
