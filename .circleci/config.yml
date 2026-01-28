@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: 
+          commands: 
             echo $NEW_ENV_VAR
 
   Create text file:
