@@ -16,13 +16,13 @@ jobs:
 
   Environment Variables:
     docker:
-      - image: cimg/base:current
+      - image: cimg/base:currentt
 
     steps:
       - checkout
       - run:
           name: "Say hello"
-          commands: 
+          command: 
             echo $NEW_ENV_VAR
 
   Create text file:
