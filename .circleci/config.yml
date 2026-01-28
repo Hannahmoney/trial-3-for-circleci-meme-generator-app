@@ -60,6 +60,6 @@ workflows:
       - Do not say-hello
       - Environment Variables
       - Create text file
-      - Read text file:
-          requires:
-            - Create text file
+      - Read text file
+          # requires:
+          #   - Create text file
