@@ -16,7 +16,7 @@ jobs:
 
   Environment Variables:
     docker:
-      - image: cimg/base:currentt
+      - image: cimg/base:current
 
     steps:
       - checkout
@@ -34,7 +34,7 @@ jobs:
       - run:
           name: "Create a text file"
           command: |
-            echoe "This is a sample text file." > sample.txt
+            echo "This is a sample text file." > sample.txt
       - persist_to_workspace:
           root: .
           paths:
