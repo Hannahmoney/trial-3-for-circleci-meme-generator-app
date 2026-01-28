@@ -34,13 +34,13 @@ jobs:
       - run:
           name: "Create a text file"
           command: |
-            echo "This is a sample text file." > sample.txt
+            echoe "This is a sample text file." > sample.txt
       - persist_to_workspace:
           root: .
           paths:
             - sample.txt
 
-  Read text file:
+  Read text file job:
     docker:
       - image: cimg/base:current
 
@@ -60,6 +60,6 @@ workflows:
       - Do not say-hello
       - Environment Variables
       - Create text file
-      - Read text file
-          # requires:
-          #   - Create text file
+      - Read text file job:
+          requires:
+            - Create text file
